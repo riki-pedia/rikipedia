@@ -80,7 +80,10 @@ function stripHtml(html) {
         try {
           const response = await fetch('https://api.riki-pedia.org', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+              'Content-Type': 'application/json',
+              'Allow-Control-Allow-Origin': '*'
+             },
             body: JSON.stringify({
               filename: form.filename.value,
               content: blocks,
